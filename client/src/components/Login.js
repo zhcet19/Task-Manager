@@ -22,6 +22,8 @@ function LoginPage() {
     }
   };
 
+ 
+
   return (
     <>
      <NavbarAuth/>
@@ -58,7 +60,7 @@ function LoginPage() {
               Signup
             </Link>
           </Box>
-          <Button variant="contained" color="primary"  sx={{ mt: 2 }}>
+          <Button variant="contained" color="primary"  sx={{ mt: 2 }} >
             Login with Google
           </Button>
         </Box>

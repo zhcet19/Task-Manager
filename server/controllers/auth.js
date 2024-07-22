@@ -13,9 +13,9 @@ const Register = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { username, email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   try {
-    const user = new User({ username, email, password });
+    const user = new User({lastName, firstName, email, password });
     await user.save();
     res.status(201).json({ message: 'User registered successfully' });
   } catch (err) {

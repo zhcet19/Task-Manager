@@ -19,11 +19,15 @@ function Register() {
       return;
     }
 
+    const payload = { firstName, lastName, email, password };
+
+    console.log('Sending payload:', payload);
+
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, { firstName, lastName, email, password });
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, payload);
       navigate('/login');
     } catch (error) {
-      console.error(error);
+      console.error('Error during registration:', error.response.data);
       alert('Registration failed');
     }
   };
@@ -87,7 +91,7 @@ function Register() {
           </form>
           <Box display="flex"   alignItems="center"  mt={2}>
             <Typography variant="body2">Already have an account?</Typography>
-            <Link href="/login" variant="body2">
+            <Link href="/login" variant="body2" sx={{ ml: 1 }}>
               Login
             </Link>
           </Box>
