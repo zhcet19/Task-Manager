@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-const { Register, Login, GoogleLogin } = require("../controllers/auth");
+const { Register,Login, googleLogin } = require("../controllers/auth");
 const { body } = require("express-validator");
 
 const router = express.Router();
@@ -22,15 +22,11 @@ router.post(
 //Signin route
 router.post("/login", Login);
 
-router.get(
-  "/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
 
-router.get(
+
+router.post(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
-  GoogleLogin
+  googleLogin
 );
 
 // Logout route

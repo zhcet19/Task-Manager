@@ -95,9 +95,9 @@ function Register() {
               Login
             </Link>
           </Box>
-          <Button variant="contained" color="primary"  sx={{ mt: 2 }}>
+          {/* <Button variant="contained" color="primary"  sx={{ mt: 2 }}>
             Signup with Google
-          </Button>
+          </Button> */}
         </Box>
       </Container>
     </>
